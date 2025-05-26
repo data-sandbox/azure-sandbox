@@ -35,3 +35,5 @@ resource "azurerm_linux_function_app" "functions_demo" {
   }
 
 }
+
+# TODO application insights resource
