@@ -36,4 +36,17 @@ resource "azurerm_linux_function_app" "functions_demo" {
 
 }
 
+resource "azurerm_linux_web_app" "web_app_demo" {
+  name                = var.web_app_name
+  resource_group_name = azurerm_resource_group.functions_rg.name
+  location            = azurerm_service_plan.service_plan.location
+  service_plan_id     = azurerm_service_plan.service_plan.id
+
+  site_config {
+    application_stack {
+      python_version = 3.12
+    }
+  }
+}
+
 # TODO application insights resource
