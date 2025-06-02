@@ -8,8 +8,8 @@ import uvicorn
 
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="app_service_demo/static"), name="static")
-templates = Jinja2Templates(directory="app_service_demo/templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
 
 @app.get("/", response_class=HTMLResponse)
